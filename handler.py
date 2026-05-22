@@ -12,6 +12,8 @@ _PROCESSOR = None
 MODEL_ID = os.environ.get("MODEL_ID", "allenai/olmOCR-2-7B-1025-FP8")
 
 def load_model():
+    import transformers
+    print("Transformers version:", transformers.__version__)
     global _MODEL, _PROCESSOR
     if _MODEL is not None:
         return
