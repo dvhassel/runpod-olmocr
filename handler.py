@@ -19,10 +19,10 @@ def load_model():
         return
 
     import torch
-    from transformers import AutoProcessor, AutoModelForVision2Seq
+    from transformers import AutoProcessor, AutoModelForConditionalGeneration
 
     _PROCESSOR = AutoProcessor.from_pretrained(MODEL_ID, trust_remote_code=True)
-    _MODEL = AutoModelForVision2Seq.from_pretrained(
+    _MODEL = AutoModelForConditionalGeneration.from_pretrained(
         MODEL_ID,
         torch_dtype=torch.float16,
         device_map="auto",
